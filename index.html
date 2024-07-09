@@ -3,6 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+form input[type="submit"] {
+  background-color: #008CBA;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+    </style>
     <title>Image Uploader</title>
 </head>
 <body>
@@ -11,13 +37,17 @@
             <h1></h1>
         </header>
         <main>
-            <div class="design"></div>
             <div class="uploader">
                 <form action="/upload" method="POST" enctype="multipart/form-data">
                     <h3>Upload your image here</h3>
-                    <span></span>
+                    <input type="text" name="image_id" placeholder="Image id">
                     <input type="file" name="image" accept=".jpg, .jpeg, .png" placeholder="image">
                     <input type="submit" value="Upload">
+                </form>
+
+                <form action="/image" method="GET">
+                    <input type="text" placeholder="Image id" name="image_id">
+                    <input type="submit" value="Get Image">
                 </form>
             </div>
         </main>
